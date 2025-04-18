@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Marked</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+  <div class="logo-wrapper">
+    <img src="https://vignan.ac.in/newvignan/assets/images/Logo%20with%20Deemed.svg" alt="Attendance Logo" class="logo">
+  </div>
+
+  <div class="container">
+    <div id="form-section">
+      <h1>Welcome to the Attendance System</h1>
+      <p>Please enter your Registration Number:</p>
+      <input type="text" id="regNo" placeholder="Enter Reg No">
+      <button onclick="markAttendance()">Submit</button>
+    </div>
+
+    <div id="success-section" style="display: none;">
+      <h1>Welcome to the Attendance System</h1>
+      <p>Your attendance has been marked <span class="success">successfully</span>.</p>
+    </div>
+  </div>
+
+  <script>
+    function markAttendance() {
+      const regNo = document.getElementById("regNo").value.trim();
+      if (regNo !== "") {
+        document.getElementById("form-section").style.display = "none";
+        document.getElementById("success-section").style.display = "block";
+      } else {
+        alert("Please enter your registration number.");
+      }
+    }
+  </script>
+</body>
+</html>
